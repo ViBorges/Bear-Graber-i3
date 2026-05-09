@@ -128,7 +128,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "VbA Bear Printer"
+#define CUSTOM_MACHINE_NAME "VbA Bear"
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 // Printer's unique ID, used by some programs to differentiate between machines.
@@ -2492,41 +2492,41 @@
 //
 // Preheat Constants - Up to 10 are supported without changes
 //
-#define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 205
-#define PREHEAT_1_TEMP_BED     60
-#define PREHEAT_1_TEMP_CHAMBER 0
-#define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_1_LABEL         "PLA"
+#define PREHEAT_1_TEMP_HOTEND    205
+#define PREHEAT_1_TEMP_BED       60
+#define PREHEAT_1_TEMP_CHAMBER   0
+#define PREHEAT_1_FAN_SPEED      0
 
-#define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    100
-#define PREHEAT_2_TEMP_CHAMBER 0
-#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_2_LABEL         "ABS"
+#define PREHEAT_2_TEMP_HOTEND    240
+#define PREHEAT_2_TEMP_BED       100
+#define PREHEAT_2_TEMP_CHAMBER   0
+#define PREHEAT_2_FAN_SPEED      0
 
-#define PREHEAT_2_LABEL       "TPU"
-#define PREHEAT_2_TEMP_HOTEND 225
-#define PREHEAT_2_TEMP_BED    60
-#define PREHEAT_2_TEMP_CHAMBER 0
-#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_3_LABEL         "TPU"
+#define PREHEAT_3_TEMP_HOTEND    225
+#define PREHEAT_3_TEMP_BED       60
+#define PREHEAT_3_TEMP_CHAMBER   0
+#define PREHEAT_3_FAN_SPEED      0
 
-#define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND 230
-#define PREHEAT_2_TEMP_BED    70
-#define PREHEAT_2_TEMP_CHAMBER 0
-#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_4_LABEL         "PETG"
+#define PREHEAT_4_TEMP_HOTEND    230
+#define PREHEAT_4_TEMP_BED       80
+#define PREHEAT_4_TEMP_CHAMBER   0
+#define PREHEAT_4_FAN_SPEED      0
 
-#define PREHEAT_2_LABEL       "Custom #1"
-#define PREHEAT_2_TEMP_HOTEND 230
-#define PREHEAT_2_TEMP_BED    70
-#define PREHEAT_2_TEMP_CHAMBER 0
-#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_5_LABEL         "Custom #1"
+#define PREHEAT_5_TEMP_HOTEND    210
+#define PREHEAT_5_TEMP_BED       60
+#define PREHEAT_5_TEMP_CHAMBER   0
+#define PREHEAT_5_FAN_SPEED      0
 
-#define PREHEAT_2_LABEL       "Custom #2"
-#define PREHEAT_2_TEMP_HOTEND 230
-#define PREHEAT_2_TEMP_BED    70
-#define PREHEAT_2_TEMP_CHAMBER 0
-#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_6_LABEL         "Custom #2"
+#define PREHEAT_6_TEMP_HOTEND    230
+#define PREHEAT_6_TEMP_BED       70
+#define PREHEAT_6_TEMP_CHAMBER   0
+#define PREHEAT_6_FAN_SPEED      0
 
 /**
  * @section nozzle park
@@ -2769,14 +2769,14 @@
  *
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
-#define DISPLAY_CHARSET_HD44780 WESTERN
+#define DISPLAY_CHARSET_HD44780 CYRILLIC
 
 /**
  * Info Screen Style (0:Classic, 1:Průša, 2:CNC)
  *
  * :[0:'Classic', 1:'Průša', 2:'CNC']
  */
-#define LCD_INFO_SCREEN_STYLE 1
+#define LCD_INFO_SCREEN_STYLE 0
 
 /**
  * LCD Menu Items
@@ -2816,7 +2816,7 @@
 //
 //  Set this option if CLOCKWISE causes values to DECREASE
 //
-//#define REVERSE_ENCODER_DIRECTION
+#define REVERSE_ENCODER_DIRECTION
 
 //
 // This option reverses the encoder direction for navigating LCD menus.

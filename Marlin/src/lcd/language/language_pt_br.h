@@ -34,7 +34,7 @@ namespace LanguageNarrow_pt_br {
   constexpr uint8_t CHARSIZE              = 2;
   LSTR LANGUAGE                           = _UxGT("Portuguese (BR)");
 
-  LSTR WELCOME_MSG                        = MACHINE_NAME_SUBST _UxGT(" pronto.");
+  LSTR WELCOME_MSG                        = MACHINE_NAME_SUBST _UxGT(" pronta.");
   LSTR MSG_YES                            = _UxGT("SIM");
   LSTR MSG_NO                             = _UxGT("NÃO");
   LSTR MSG_BACK                           = _UxGT("Voltar");
