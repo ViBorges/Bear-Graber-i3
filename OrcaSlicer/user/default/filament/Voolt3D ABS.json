@@ -1,0 +1,60 @@
+{
+    "compatible_printers": [
+        "MyMarlin 0.4 nozzle"
+    ],
+    "default_filament_colour": [
+        "#C09632"
+    ],
+    "fan_max_speed": [
+        "0"
+    ],
+    "fan_min_speed": [
+        "0"
+    ],
+    "filament_cost": [
+        "60"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "filament_flow_ratio": [
+        "0.95"
+    ],
+    "filament_retraction_length": [
+        "2"
+    ],
+    "filament_settings_id": [
+        "Voolt3D ABS"
+    ],
+    "filament_vendor": [
+        "Voolt3D"
+    ],
+    "from": "User",
+    "hot_plate_temp_initial_layer": [
+        "100"
+    ],
+    "inherits": "Generic ABS @System",
+    "internal_bridge_fan_speed": [
+        "15"
+    ],
+    "name": "Voolt3D ABS",
+    "nozzle_temperature": [
+        "225"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "225"
+    ],
+    "overhang_fan_speed": [
+        "30"
+    ],
+    "overhang_fan_threshold": [
+        "95%"
+    ],
+    "reduce_fan_stop_start_freq": [
+        "0"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "100"
+    ],
+    "version": "2.3.2.60"
+}

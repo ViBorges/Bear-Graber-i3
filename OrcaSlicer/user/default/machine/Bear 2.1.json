@@ -1,0 +1,75 @@
+{
+    "auxiliary_fan": "1",
+    "enable_filament_ramming": "0",
+    "from": "User",
+    "gcode_flavor": "marlin2",
+    "inherits": "MyMarlin 0.4 nozzle",
+    "machine_end_gcode": "; --- Início da Finalização Segura ---\nM83 ; Configura Extrusor para Modo Relativo (Essencial!)\n\n; --- Retração Rápida (Total 5mm) ---\nG1 E-2.0 F2400 ; Retração instantânea de 2mm a 40mm/s\nG1 E-3.0 F600  ; Retração lenta de mais 3mm (Total 5mm acumulados)\n\n; --- Movimento de Saída Otimizado ---\n; Sobe o Z de forma segura e move o X para longe\nG1 Z{min(max_layer_z+5, max_print_height)} F600 ; Sobe 5mm a 10mm/s\nG1 X0 F6000 ; X corre para o canto a 100mm/s (Corta o \"cabelo\")\n\n; --- Estacionamento Final ---\nG1 Y180 F3000 ; Move a mesa para frente rápido\nM82 ; Volta Extrusor para Modo Absoluto (Padrão dos fatiadores)\n\n; --- Desligamento ---\nG4 ; wait\nM104 S0 ; desliga bico\nM140 S0 ; desliga mesa\nM107 ; desliga fan\nM84 ; desliga motores",
+    "machine_max_acceleration_extruding": [
+        "1500",
+        "10000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "1800",
+        "1000"
+    ],
+    "machine_max_acceleration_travel": [
+        "2000",
+        "0"
+    ],
+    "machine_max_acceleration_x": [
+        "2000",
+        "10000"
+    ],
+    "machine_max_acceleration_y": [
+        "2000",
+        "10000"
+    ],
+    "machine_max_acceleration_z": [
+        "20",
+        "500"
+    ],
+    "machine_max_speed_e": [
+        "25",
+        "60"
+    ],
+    "machine_max_speed_x": [
+        "300",
+        "500"
+    ],
+    "machine_max_speed_y": [
+        "300",
+        "500"
+    ],
+    "machine_max_speed_z": [
+        "3",
+        "10"
+    ],
+    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\n@BEDLEVELVISUALIZER\n\nG29 T\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n\n; Intro Line 220x220 - Bear\nG92 E0\nG1 Z0.28 F3000\nG1 X5 Y1.0 F6000\n\n; purge line 1\nG1 X205 Y1.0 E18 F1000\n\n; purge line 2\nG1 Y2.2 F3000\nG1 X5 Y2.2 E18 F1000\n\n; pressure settle / wipe\nG1 Y3.0 F3000\nG1 X65 Y3.0 E6 F1000\nG1 X105 Y3.0 E5 F1000\n\nG92 E0",
+    "manual_filament_change": "1",
+    "name": "Bear 2.1",
+    "nozzle_type": [
+        "brass"
+    ],
+    "printable_area": [
+        "0x0",
+        "220x0",
+        "220x220",
+        "0x220"
+    ],
+    "printable_height": "190",
+    "printer_extruder_id": [
+        "1"
+    ],
+    "printer_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "printer_settings_id": "Bear 2.1",
+    "purge_in_prime_tower": "0",
+    "support_multi_bed_types": "1",
+    "time_cost": "0.25",
+    "version": "2.3.1.10",
+    "z_hop": [
+        "0"
+    ]
+}

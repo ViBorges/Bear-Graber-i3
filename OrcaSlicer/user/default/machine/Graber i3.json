@@ -1,0 +1,35 @@
+{
+    "auxiliary_fan": "1",
+    "enable_filament_ramming": "0",
+    "from": "User",
+    "gcode_flavor": "marlin2",
+    "inherits": "MyMarlin 0.4 nozzle",
+    "machine_end_gcode": "; --- Início da Finalização Segura ---\nM83 ; Configura Extrusor para Modo Relativo (Essencial!)\n\n; --- Retração Rápida (Total 5mm) ---\nG1 E-2.0 F2400 ; Retração instantânea de 2mm a 40mm/s\nG1 E-3.0 F600  ; Retração lenta de mais 3mm (Total 5mm acumulados)\n\n; --- Movimento de Saída Otimizado ---\n; Sobe o Z de forma segura e move o X para longe\nG1 Z{min(max_layer_z+5, max_print_height)} F600 ; Sobe 5mm a 10mm/s\nG1 X0 F6000 ; X corre para o canto a 100mm/s (Corta o \"cabelo\")\n\n; --- Estacionamento Final ---\nG1 Y180 F3000 ; Move a mesa para frente rápido\nM82 ; Volta Extrusor para Modo Absoluto (Padrão dos fatiadores)\n\n; --- Desligamento ---\nG4 ; wait\nM104 S0 ; desliga bico\nM140 S0 ; desliga mesa\nM107 ; desliga fan\nM84 ; desliga motores",
+    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\n@BEDLEVELVISUALIZER\n\nG29 T\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0",
+    "manual_filament_change": "1",
+    "name": "Graber i3",
+    "nozzle_type": [
+        "brass"
+    ],
+    "printable_area": [
+        "0x0",
+        "220x0",
+        "220x220",
+        "0x220"
+    ],
+    "printable_height": "180",
+    "printer_extruder_id": [
+        "1"
+    ],
+    "printer_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "printer_settings_id": "Graber i3",
+    "purge_in_prime_tower": "0",
+    "support_multi_bed_types": "1",
+    "time_cost": "0.25",
+    "version": "2.3.1.10",
+    "z_hop": [
+        "0"
+    ]
+}
